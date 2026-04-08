@@ -25,3 +25,23 @@ def get_nth_fibonacci(n):
         for _ in range(2, n + 1):
             a, b = b, a + b
         return b
+        
+def test_get_nth_fibonacci_edge_cases():
+    """Test edge cases for get_nth_fibonacci."""
+    # Test n=0
+    assert get_nth_fibonacci(0) == 0
+    # Test n=1
+    assert get_nth_fibonacci(1) == 1
+    # Test n=2 and beyond
+    assert get_nth_fibonacci(2) == 1
+    assert get_nth_fibonacci(5) == 5
+
+def test_get_nth_fibonacci_negative():
+    """Test that negative n raises ValueError."""
+    with pytest.raises(ValueError):
+        get_nth_fibonacci(-1)
+
+def test_area_of_circle_negative():
+    """Test that negative radius raises ValueError."""
+    with pytest.raises(ValueError):
+        area_of_circle(-1)
